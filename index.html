@@ -1,0 +1,31 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HiFi Studio</title><link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="HiFi Studio"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0b0b10">
+<style>
+:root{--bg:#0b0b10;--c:#17171f;--t:#f2efe6;--g:#d4af37;--m:#8d8b86}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:15px -apple-system,sans-serif;padding:env(safe-area-inset-top) 16px calc(env(safe-area-inset-bottom) + 24px)}
+h1{font-size:22px;color:var(--g);margin:18px 0 4px}.sub{color:var(--m);font-size:12px;margin-bottom:14px}
+.card{background:var(--c);border-radius:16px;padding:14px;margin-bottom:12px}
+button,.btn{background:var(--g);color:#111;border:0;border-radius:12px;padding:11px 14px;font-weight:600;font-size:14px;display:inline-block}
+button.o{background:#2a2a35;color:var(--t)}button.on{outline:2px solid var(--g)}button:disabled{opacity:.4}
+input[type=text]{width:100%;padding:11px;border-radius:10px;border:1px solid #333;background:#0f0f15;color:var(--t);margin-bottom:8px}
+input[type=file]{display:none}audio{width:100%;margin-top:10px}
+.row{display:flex;gap:8px;flex-wrap:wrap}.sl{display:flex;align-items:center;gap:8px;margin:9px 0;font-size:13px}
+.sl span{width:92px}.sl b{width:38px;text-align:right;color:var(--g)}.sl input{flex:1;accent-color:var(--g)}
+#log{white-space:pre-wrap;color:var(--m);font-size:12.5px;line-height:1.5}
+</style></head><body>
+<h1>HiFi Studio</h1><div class="sub">Nghe • AI phân tích • Nâng chất lượng • Lưu vào Tệp</div>
+<div class="card"><div class="row"><label class="btn">Chọn nhạc<input id="f" type="file" accept="audio/*"></label>
+<button class="o" id="nm" disabled>Chưa có bài</button></div>
+<input id="u" type="text" placeholder="Gõ tên bài hoặc dán link (Facebook, YouTube, TikTok...)" style="margin-top:10px">
+<div class="row"><select id="fm" style="padding:10px;border-radius:10px;background:#2a2a35;color:#f2efe6;border:0"><option value="mp3">MP3 320</option><option value="flac">FLAC</option><option value="m4a">M4A</option><option value="1080">Video 1080p</option><option value="2160">Video 4K</option></select><button id="dl">Tải ngay</button><button id="ls">Chọn bài</button><button class="o" id="cfg">Cài GitHub</button></div><div id="rs"></div><audio id="a" controls playsinline></audio></div>
+<div class="card"><div class="row"><button class="o on" id="q1">Hi-Fi 16bit</button><button class="o" id="q2">Hi-Res 24bit</button>
+<button class="o on" id="bp">EQ: BẬT</button></div>
+<div id="sl" style="margin-top:6px"></div>
+<div class="row"><button id="ai">AI phân tích & nâng cấp</button></div></div>
+<div class="card"><div class="row"><button id="ex" disabled>Xuất bản nâng cấp</button><button class="o" id="sv" disabled>Lưu vào Tệp</button></div>
+<div id="log" style="margin-top:10px">Chọn một bài nhạc để bắt đầu.</div></div>
+<div class="sub" style="text-align:center">v7</div><script src="app.js"></script></body></html>
